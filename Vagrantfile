@@ -4,9 +4,9 @@ def define_node(config, node_name, ip_address=nil, the_recipe=nil)
     node.vm.network :private_network, ip: ip_address if ip_address     
     node.vm.provision :chef_client do |chef|
       chef.provisioning_path = "/etc/chef"
-      chef.chef_server_url = "https://api.opscode.com/organizations/awo"
-      chef.validation_key_path = ".chef/awo-validator.pem"
-      chef.validation_client_name = "awo-validator"
+      chef.chef_server_url = "https://api.opscode.com/organizations/streambox"
+      chef.validation_key_path = ".chef/streambox-validator.pem"
+      chef.validation_client_name = "streambox-validator"
       chef.node_name = node_name.to_s
       chef.add_recipe the_recipe if the_recipe
     end
